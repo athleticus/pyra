@@ -233,9 +233,11 @@ if __name__ == '__main__':
     parser.add_argument('-d', dest='details', action='store_const', default=False, const=True, help='Show detailed output for each test.')
     parser.add_argument('-t', dest='timeout', default=5, help='Set the time limit, in seconds, for each test to run.')
     parser.add_argument('--full-path', dest='fullPath', action='store_const', default=False, const=True, help='Use the full path for all files.')
-    parser.add_argument('tests', type=int, nargs='?', help="The specific test to run.")
+    parser.add_argument('tests', type=int, nargs='?', default=None, help="The specific test to run.")
 
     args = vars(parser.parse_args())
     config.update(args)
 
-    TestRunner(TESTS, config).run_tests(indices=[config['tests']])
+    indices = None if config['tests'] is None else [config['tests']]
+
+    TestRunner(TESTS, config).run_tests(indices=indices)
