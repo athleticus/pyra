@@ -59,7 +59,8 @@ class TestRunner(object):
                 'out': test[3],
                 'err': test[4],
                 'args': test[7],
-                'name': test[8]
+                'name': test[8],
+                'raw': testLine
             }
 
             res.append(test)
@@ -167,6 +168,9 @@ class TestRunner(object):
 
             self._printNoDetail(colored("Test {} {}".format(testNum, outcome), 'green' if success else 'red'))
 
+            if not success:
+                self._printDetail(colored(test['raw'], 'yellow'))
+
             self._printDetail("=" * 80)
 
         self._log("Passed {}/{} tests!".format(sum(res), len(tests)))
@@ -209,7 +213,7 @@ TESTS = """
 ./player|0|gameover.in|dash|gameover.out|||3 A|Gameover
 ./player|5|gameove.in|dash|gameove.out|||3 A|Gameove
 ./player|5|gameover_no_nl.in|dash|gameover_no_nl.out|||3 A|Gameover no new line
-./player|5|gameover_space.in|dash|gameover_space.out|||3 A|Gameover<space>
+./player|0|gameover_space.in|dash|gameover_space.out|||3 A|Gameover<space>
 
 #New round
 ./player|0|new_round.in|dash|new_round.out|||4 B|New Round
@@ -218,6 +222,11 @@ TESTS = """
 ./player|5|new_round_card_9.in|dash|new_round_card_9.out|||4 B|New round card 9
 ./player|5|new_round_card_111.in|dash|new_round_card_111.out|||4 B|New round card 111
 ./player|5|new_round_no_card.in|dash|new_round_no_card.out|||4 B|New round card no card
+
+#Game 1
+./player|0|game1_A.in|game1_A.out|game1_A.err|||2 A|Game 1, Player A
+./player|0|game1_B.in|game1_B.out|game1_B.err|||2 B|Game 1, Player B
+
 """
 
 

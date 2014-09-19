@@ -1,0 +1,18 @@
+From hub:newround 8
+A :
+B :
+You are holding:--
+A :
+B :
+You are holding:8-
+From hub:thishappened A1B8/B8B
+A :
+B :
+You are holding:8-
+A :1
+B-:8
+You are holding:--
+From hub:gameover
+A :1
+B-:8
+You are holding:--

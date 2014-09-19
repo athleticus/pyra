@@ -1,0 +1,26 @@
+From hub:newround 2
+A :
+B :
+You are holding:--
+A :
+B :
+You are holding:2-
+From hub:yourturn 1
+A :
+B :
+You are holding:2-
+To hub:1B8
+A :1
+B :
+You are holding:2-
+From hub:thishappened A1B8/B8B
+A :1
+B :
+You are holding:2-
+A :1
+B-:8
+You are holding:2-
+From hub:gameover
+A :1
+B-:8
+You are holding:2-
