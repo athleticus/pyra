@@ -213,7 +213,7 @@ TESTS = """
 ./player|0|gameover.in|dash|gameover.out|||3 A|Gameover
 ./player|5|gameove.in|dash|gameove.out|||3 A|Gameove
 ./player|5|gameover_no_nl.in|dash|gameover_no_nl.out|||3 A|Gameover no new line
-./player|0|gameover_space.in|dash|gameover_space.out|||3 A|Gameover<space>
+./player|5|gameover_space.in|dash|gameover_space.out|||3 A|Gameover<space>
 
 #New round
 ./player|0|new_round.in|dash|new_round.out|||4 B|New Round
