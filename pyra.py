@@ -266,6 +266,8 @@ TESTS = """
 ./hub|5|empty|baron_lesser.out|player_quit.err|||./pyra/assets/baron_lesser.deck ./pyra/assets/discard3tB.sh ./pyra/assets/noplay.sh|
 ./hub|5|empty|baron_greater.out|player_quit.err|||./pyra/assets/baron_greater.deck ./pyra/assets/discard3tB.sh ./pyra/assets/noplay.sh|
 
+# Sample game 1
+./hub|0|empty|sample1.out|empty|||./pyra/assets/sample1.deck ./player ./player ./player ./player|
 
 """
 
