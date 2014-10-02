@@ -227,6 +227,46 @@ TESTS = """
 ./player|0|game1_A.in|game1_A.out|game1_A.err|||2 A|Game 1, Player A
 ./player|0|game1_B.in|game1_B.out|game1_B.err|||2 B|Game 1, Player B
 
+#Countess not played
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/countess1.deck ./pyra/assets/discard5tB.sh ./player|Countess played 1a
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/countess1.deck ./pyra/assets/discard6tB.sh ./player|Countess played 1b
+./hub|5|empty|countess.out|player_quit.err|||./pyra/assets/countess1.deck ./pyra/assets/discard7.sh ./pyra/assets/discard2.sh|Countess played 1c
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/countess2.deck ./pyra/assets/discard5tB.sh ./player|Countess played 2a
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/countess2.deck ./pyra/assets/discard6tB.sh ./player|Countess played 2b
+./hub|5|empty|countess.out|player_quit.err|||./pyra/assets/countess2.deck ./pyra/assets/discard7.sh ./pyra/assets/discard2.sh|Countess played 2c
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/countess3.deck ./pyra/assets/discard5tB.sh ./player|Countess played 3a
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/countess3.deck ./pyra/assets/discard6tB.sh ./player|Countess played 3b
+./hub|5|empty|countess.out|player_quit.err|||./pyra/assets/countess3.deck ./pyra/assets/discard7.sh ./pyra/assets/discard2.sh|Countess played 3c
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/countess3.deck ./pyra/assets/discard5tB.sh ./player|Countess played 3a
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/countess3.deck ./pyra/assets/discard6tB.sh ./player|Countess played 3b
+./hub|5|empty|countess.out|player_quit.err|||./pyra/assets/countess3.deck ./pyra/assets/discard7.sh ./pyra/assets/discard2.sh|Countess played 3c
+
+# Plays card not in hand
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/ex.deck ./pyra/assets/discard1tBg8.sh ./pyra/assets/noplay.sh|
+./hub|5|empty|A_played_2.out|player_quit.err|||./pyra/assets/ex.deck ./pyra/assets/discard2.sh ./pyra/assets/noplay.sh| Valid move
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/ex.deck ./pyra/assets/discard3tB.sh ./pyra/assets/noplay.sh|
+./hub|5|empty|A_played_4.out|player_quit.err|||./pyra/assets/ex.deck ./pyra/assets/discard4.sh ./pyra/assets/noplay.sh| Valid move
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/ex.deck ./pyra/assets/discard5tB.sh ./pyra/assets/noplay.sh|
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/ex.deck ./pyra/assets/discard6tB.sh ./pyra/assets/noplay.sh|
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/ex.deck ./pyra/assets/discard7.sh ./pyra/assets/noplay.sh|
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/ex.deck ./pyra/assets/discard8.sh ./pyra/assets/noplay.sh|
+
+# Target protected
+./hub|6|empty|protected1.out|invalid_player_msg.err|||./pyra/assets/protected1.deck ./pyra/assets/discard4.sh ./pyra/assets/discard3tA.sh| Targetting protected
+./hub|6|empty|protected2.out|invalid_player_msg.err|||./pyra/assets/protected2.deck ./pyra/assets/discard2.sh ./pyra/assets/discard5tA.sh ./pyra/assets/discard3tA.sh| Targetting protected by discard
+./hub|5|empty|protected2b.out|player_quit.err|||./pyra/assets/protected2.deck ./pyra/assets/discard2.sh ./pyra/assets/discard5tA.sh ./pyra/assets/discard3tB.sh| Valid target
+./hub|5|empty|protected3.out|player_quit.err|||./pyra/assets/protected3.deck ./pyra/assets/protected3A.sh ./pyra/assets/discard4.sh| Protection on self has expired (valid target)
+
+
+# Baron equal compare
+./hub|5|empty|baron_equal.out|player_quit.err|||./pyra/assets/baron_equal.deck ./pyra/assets/discard3tB.sh ./pyra/assets/noplay.sh|
+./hub|5|empty|baron_lesser.out|player_quit.err|||./pyra/assets/baron_lesser.deck ./pyra/assets/discard3tB.sh ./pyra/assets/noplay.sh|
+./hub|5|empty|baron_greater.out|player_quit.err|||./pyra/assets/baron_greater.deck ./pyra/assets/discard3tB.sh ./pyra/assets/noplay.sh|
+
+
 """
 
 
