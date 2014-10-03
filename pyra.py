@@ -266,8 +266,63 @@ TESTS = """
 ./hub|5|empty|baron_lesser.out|player_quit.err|||./pyra/assets/baron_lesser.deck ./pyra/assets/discard3tB.sh ./pyra/assets/noplay.sh|
 ./hub|5|empty|baron_greater.out|player_quit.err|||./pyra/assets/baron_greater.deck ./pyra/assets/discard3tB.sh ./pyra/assets/noplay.sh|
 
+# Willingly discarding princess
+./hub|0|empty|discardprincess.out|empty|||./pyra/assets/discardprincess.deck ./pyra/assets/discard8x4.sh ./pyra/assets/noplay.sh|
+
 # Sample game 1
 ./hub|0|empty|sample1.out|empty|||./pyra/assets/sample1.deck ./player ./player ./player ./player|
+
+# Sample game 2
+./hub|0|empty|sample2.out|empty|||./pyra/assets/sample2.deck ./player ./player ./player|
+
+# Illegal moves
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal1.deck ./pyra/assets/illegal0A.sh ./pyra/assets/illegal0A.sh|No card with guess and target
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal1.deck ./pyra/assets/illegal1A.sh ./pyra/assets/noplay.sh|Guard targetting self
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal1.deck ./pyra/assets/illegal2A.sh ./pyra/assets/noplay.sh|Guard guess with no target
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal1.deck ./pyra/assets/illegal1cA.sh ./pyra/assets/noplay.sh|Guard target with no guess
+./hub|5|empty|illegal1d.out|player_quit.err|||./pyra/assets/illegal1.deck ./pyra/assets/illegal1dA.sh ./pyra/assets/noplay.sh|Guard valid
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal2a.deck ./pyra/assets/illegal2aA.sh ./pyra/assets/noplay.sh|Priest with guess
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal2a.deck ./pyra/assets/illegal2bA.sh ./pyra/assets/noplay.sh|Priest with target
+./hub|5|empty|illegal2d.out|player_quit.err|||./pyra/assets/illegal2a.deck ./pyra/assets/illegal2cA.sh ./pyra/assets/noplay.sh|Priest valid
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal3a.deck ./pyra/assets/illegal3aA.sh ./pyra/assets/noplay.sh|Baron with guess
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal3a.deck ./pyra/assets/illegal3bA.sh ./pyra/assets/noplay.sh|Baron with guess and no target
+./hub|5|empty|illegal3c.out|player_quit.err|||./pyra/assets/illegal3a.deck ./pyra/assets/illegal3cA.sh ./pyra/assets/noplay.sh|Baron valid
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal3a.deck ./pyra/assets/illegal3dA.sh ./pyra/assets/noplay.sh|Baron targetting self
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal4a.deck ./pyra/assets/illegal4aA.sh ./pyra/assets/noplay.sh|Maid with target
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal4a.deck ./pyra/assets/illegal4bA.sh ./pyra/assets/noplay.sh|Maid with guess
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal4a.deck ./pyra/assets/illegal4cA.sh ./pyra/assets/noplay.sh|Maid with target and guess
+./hub|5|empty|illegal4d.out|player_quit.err|||./pyra/assets/illegal4a.deck ./pyra/assets/illegal4dA.sh ./pyra/assets/noplay.sh|Maid valid
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal5a.deck ./pyra/assets/illegal5aA.sh ./pyra/assets/noplay.sh|Prince with no target
+./hub|5|empty|illegal5b.out|player_quit.err|||./pyra/assets/illegal5a.deck ./pyra/assets/illegal5bA.sh ./pyra/assets/noplay.sh|Prince valid: targetting self
+./hub|5|empty|illegal5c.out|player_quit.err|||./pyra/assets/illegal5a.deck ./pyra/assets/illegal5cA.sh ./pyra/assets/noplay.sh|Prince valid: targetting other
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal5a.deck ./pyra/assets/illegal5dA.sh ./pyra/assets/noplay.sh|Prince with guess
+
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal6a.deck ./pyra/assets/illegal6aA.sh ./pyra/assets/noplay.sh|King with no target when target available
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal6a.deck ./pyra/assets/illegal6bA.sh ./pyra/assets/noplay.sh|King targetting self
+./hub|5|empty|illegal6c.out|player_quit.err|||./pyra/assets/illegal6a.deck ./pyra/assets/illegal6cA.sh ./pyra/assets/noplay.sh|King valid
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal6a.deck ./pyra/assets/illegal6dA.sh ./pyra/assets/noplay.sh|King with guess
+./hub|5|empty|illegal6e.out|player_quit.err|||./pyra/assets/illegal6e.deck ./pyra/assets/illegal6eA.sh ./pyra/assets/illegal6eB.sh|King with no target when no target available
+
+./hub|5|empty|illegal7a.out|player_quit.err|||./pyra/assets/illegal7a.deck ./pyra/assets/illegal7aA.sh ./pyra/assets/noplay.sh|Countess valid
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal7a.deck ./pyra/assets/illegal7bA.sh ./pyra/assets/noplay.sh|Countess with target
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal7a.deck ./pyra/assets/illegal7cA.sh ./pyra/assets/noplay.sh|Countess with guess
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal7a.deck ./pyra/assets/illegal7dA.sh ./pyra/assets/noplay.sh|Countess with target and guess
+
+./hub|5|empty|illegal8a.out|player_quit.err|||./pyra/assets/illegal8a.deck ./pyra/assets/illegal8aA.sh ./pyra/assets/noplay.sh|Princess valid
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal8a.deck ./pyra/assets/illegal8bA.sh ./pyra/assets/noplay.sh|Princess with target
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal8a.deck ./pyra/assets/illegal8cA.sh ./pyra/assets/noplay.sh|Princess with guess
+./hub|6|empty|empty|invalid_player_msg.err|||./pyra/assets/illegal8a.deck ./pyra/assets/illegal8dA.sh ./pyra/assets/noplay.sh|Princess with target and guess
+
+# No target when target is available
+./hub|6|empty|illegal_nt_1.out|invalid_player_msg.err|||./pyra/assets/illegal_nt_1.deck ./pyra/assets/illegal_nt_1A.sh ./pyra/assets/illegal_nt_1B.sh|Guard with no target when target available
+./hub|6|empty|illegal_nt_3.out|invalid_player_msg.err|||./pyra/assets/illegal_nt_3.deck ./pyra/assets/illegal_nt_3A.sh ./pyra/assets/illegal_nt_3B.sh|Baron with no target when target available
+./hub|6|empty|illegal_nt_5.out|invalid_player_msg.err|||./pyra/assets/illegal_nt_5.deck ./pyra/assets/illegal_nt_5A.sh ./pyra/assets/illegal_nt_5B.sh|Prince with no target when target available
+./hub|6|empty|illegal_nt_6.out|invalid_player_msg.err|||./pyra/assets/illegal_nt_6.deck ./pyra/assets/illegal_nt_6A.sh ./pyra/assets/illegal_nt_6B.sh|King with no target when target available
 
 """
 
